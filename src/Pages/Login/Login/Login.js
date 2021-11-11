@@ -1,10 +1,12 @@
-import { Button, TextField, Typography } from '@mui/material';
+import { Alert, Button, CircularProgress, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 const Login = () => {
     const [loginData, setLoginData] = useState({});
+    const { user, loginUser, isLoading, authError } = useAuth();
 
     const handleOnChange = e => {
         const field = e.target.name;
@@ -46,6 +48,9 @@ const Login = () => {
                     to="/register">
                     <Button variant="text">New User? Please Register</Button>
                 </NavLink>
+                {isLoading && <CircularProgress />}
+                {user?.email && <Alert severity="success">Login successfully!</Alert>}
+                {authError && <Alert severity="error">{authError}</Alert>}
             </form>
             <p>------------------------</p>
             {/* <Button onClick={handleGoogleSignIn} variant="contained">Google Sign In</Button> */}

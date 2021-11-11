@@ -1,12 +1,14 @@
-import { Button, TextField, Typography } from '@mui/material';
+import { Alert, Button, CircularProgress, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 const Register = () => {
     const [loginData, setLoginData] = useState({});
 
-    // const { user, registerUser, isLoading, authError } = useAuth();
+    const { user, registerUser, isLoading, authError } = useAuth();
+    // const { registerUser, isLoading } = useAuth();
 
     const handleOnChange = e => {
         const field = e.target.name;
@@ -21,15 +23,14 @@ const Register = () => {
             alert('Your password did not match');
             return
         }
-        // registerUser(loginData.email, loginData.password)
+        registerUser(loginData.email, loginData.password)
         e.preventDefault();
     }
     return (
         <Box sx={{ mt: 8 }} item xs={12} md={6}>
             <Typography variant="body1" gutterBottom>Register
             </Typography>
-            {/* {!isLoading && <form onSubmit={handleLoginSubmit}> */}
-            <form onSubmit={handleLoginSubmit}>
+            {!isLoading && <form onSubmit={handleLoginSubmit}>
                 <TextField
                     sx={{ width: '50%', m: 1 }}
                     id="standard-basic"
@@ -64,15 +65,17 @@ const Register = () => {
                     to="/login">
                     <Button variant="text">Already Registered? Please Login</Button>
                 </NavLink>
-            </form>
-            {/* </form>}
+            </form>}
             {isLoading && <CircularProgress />}
-            {
-                user?.email && <Alert severity="success">User created successfully !</Alert>
-            }
-            {
-                authError && <Alert severity="error">{authError}</Alert>
-            } */}
+
+            <Box sx={{ width: '50%' }}>
+                {
+                    user?.email && <Alert severity="success">User created successfully !</Alert>
+                }
+                {
+                    authError && <Alert severity="error">{authError}</Alert>
+                }
+            </Box>
         </Box>
     );
 };
