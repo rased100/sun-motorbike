@@ -12,6 +12,15 @@ const useFirebase = () => {
 
     const auth = getAuth();
 
+    const [products, setProducrs] = useState([]);
+    console.log(products[0])
+
+    useEffect(() => {
+        fetch('http://localhost:5000/products')
+            .then(res => res.json())
+            .then(data => setProducrs(data))
+    }, [])
+
     const registerUser = (email, password) => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
@@ -76,6 +85,7 @@ const useFirebase = () => {
         loginUser,
         isLoading,
         authError,
+        products,
     }
 
 }
