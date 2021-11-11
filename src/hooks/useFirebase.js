@@ -13,7 +13,6 @@ const useFirebase = () => {
     const auth = getAuth();
 
     const [products, setProducrs] = useState([]);
-    console.log(products[0])
 
     useEffect(() => {
         // fetch('http://localhost:5000/products')

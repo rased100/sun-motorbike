@@ -3,6 +3,7 @@ import { Box } from '@mui/system';
 import React from 'react';
 import useAuth from '../../hooks/useAuth';
 import Product from '../Product/Product';
+import PurchaseProduct from '../PurchaseProduct/PurchaseProduct';
 
 const Products = () => {
     const { products } = useAuth();

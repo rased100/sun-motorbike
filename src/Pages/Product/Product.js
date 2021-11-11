@@ -1,5 +1,4 @@
-import { CardContent, CardMedia, Grid, Typography } from '@mui/material';
-import { Box } from '@mui/system';
+import { Button, CardContent, CardMedia, Grid, Typography } from '@mui/material';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -22,7 +21,7 @@ const Product = (props) => {
                     {description}
                 </Typography>
             </CardContent>
-            <Link to={url}><button className="btn btn-primary mb-3">Book Now</button></Link>
+            <Link to={url} style={{ textDecoration: 'none' }}><Button variant="contained">Details</Button></Link>
         </Grid>
     );
 };
