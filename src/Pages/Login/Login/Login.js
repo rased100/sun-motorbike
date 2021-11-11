@@ -1,12 +1,15 @@
 import { Alert, Button, CircularProgress, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 const Login = () => {
     const [loginData, setLoginData] = useState({});
     const { user, loginUser, isLoading, authError } = useAuth();
+
+    const location = useLocation();
+    const history = useHistory();
 
     const handleOnChange = e => {
         const field = e.target.name;
@@ -18,7 +21,7 @@ const Login = () => {
     }
 
     const handleLoginSubmit = e => {
-        alert('hello')
+        loginUser(loginData.email, loginData.password, location, history);
         e.preventDefault();
     }
     return (
@@ -52,9 +55,9 @@ const Login = () => {
                 {user?.email && <Alert severity="success">Login successfully!</Alert>}
                 {authError && <Alert severity="error">{authError}</Alert>}
             </form>
-            <p>------------------------</p>
+            {/* <p>------------------------</p> */}
             {/* <Button onClick={handleGoogleSignIn} variant="contained">Google Sign In</Button> */}
-            <Button sx={{ width: '25%', m: 1 }} variant="contained">Google Sign In</Button>
+            {/* <Button sx={{ width: '25%', m: 1 }} variant="contained">Google Sign In</Button> */}
         </Box>
     );
 };

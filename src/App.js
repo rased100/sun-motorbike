@@ -8,6 +8,8 @@ import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
+import About from './Pages/About/About';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -18,6 +20,9 @@ function App() {
             <Route path="/home">
               <Home />
             </Route>
+            <PrivateRoute path="/about">
+              <About />
+            </PrivateRoute>
             <Route path="/login">
               <Login />
             </Route>

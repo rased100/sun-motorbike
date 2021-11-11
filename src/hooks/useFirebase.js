@@ -75,6 +75,7 @@ const useFirebase = () => {
         logout,
         loginUser,
         isLoading,
+        authError,
     }
 
 }
