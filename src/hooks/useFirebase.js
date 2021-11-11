@@ -16,7 +16,8 @@ const useFirebase = () => {
     console.log(products[0])
 
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        // fetch('http://localhost:5000/products')
+        fetch('products.json')
             .then(res => res.json())
             .then(data => setProducrs(data))
     }, [])
