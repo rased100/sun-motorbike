@@ -25,7 +25,7 @@ function App() {
             <PrivateRoute path="/about">
               <About />
             </PrivateRoute>
-            <PrivateRoute path="/product/:productId">
+            <PrivateRoute path="/product/:Id">
               <PurchaseProduct></PurchaseProduct>
             </PrivateRoute>
             <Route path="/login">

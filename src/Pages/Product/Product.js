@@ -3,8 +3,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Product = (props) => {
-    const { name, img, description, _p_id } = props.product;
-    const url = `/product/${_p_id}`;
+    const { name, img, description, _id } = props.product;
+    const url = `/product/${_id}`;
+
     return (
         <Grid item xs={2} sm={4} md={4} >
             <CardMedia
