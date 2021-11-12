@@ -13,6 +13,8 @@ import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import PurchaseProduct from './Pages/PurchaseProduct/PurchaseProduct';
 import Products from './Pages/Products/Products';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 function App() {
   return (
     <div className="App">
