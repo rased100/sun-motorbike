@@ -5,11 +5,10 @@ import { useParams } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 
 const PurchaseProduct = () => {
-    // const { name, price } = product;
     const [product, setProduct] = useState({});
     const { Id } = useParams();
     const { user } = useAuth();
-    const { name, price } = product;
+    const { name, price, img, description } = product;
     // console.log('usr', user)
     // console.log('product', product)
     // console.log('name', name)
@@ -22,7 +21,7 @@ const PurchaseProduct = () => {
             .then(data => setProduct(data));
     }, []);
 
-    const initialInfo = { displayName: user.displayName, email: user.email, phone: '' }
+    const initialInfo = { userName: user.displayName, userEmail: user.email, userPhone: '' }
 
     const [purchaseInfo, setPurchaseInfo] = useState(initialInfo);
 
@@ -32,7 +31,6 @@ const PurchaseProduct = () => {
         const newInfo = { ...purchaseInfo };
         newInfo[field] = value;
         setPurchaseInfo(newInfo);
-        console.log('pinfo', purchaseInfo)
     }
 
     const handleOrderSubmit = e => {
@@ -40,7 +38,9 @@ const PurchaseProduct = () => {
         const order = {
             ...purchaseInfo,
             productName: name,
-            price: price
+            productPrice: price,
+            productImage: img,
+            productDscription: description
         }
         // send to the server
         fetch('http://localhost:5000/orders', {
@@ -53,9 +53,7 @@ const PurchaseProduct = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    // setBookingSuccess(true);
-                    // handleBookingClose();
-                    alert('post data to db')
+                    alert('Order Place Successfully')
                 }
             });
 
@@ -67,11 +65,10 @@ const PurchaseProduct = () => {
             <Grid container spacing={2}>
                 <Grid item xs={6}>
                     <form onSubmit={handleOrderSubmit}>
-                        {/* <form> */}
                         <TextField
                             sx={{ width: '90%', m: 1 }}
                             id="outlined-size-small"
-                            name="displayName"
+                            name="userName"
                             onBlur={handleOnBlur}
                             defaultValue={user.displayName}
                             size="small"
@@ -79,7 +76,7 @@ const PurchaseProduct = () => {
                         <TextField
                             sx={{ width: '90%', m: 1 }}
                             id="outlined-size-small"
-                            name="email"
+                            name="userEmail"
                             onBlur={handleOnBlur}
                             defaultValue={user.email}
                             size="small"
@@ -87,7 +84,7 @@ const PurchaseProduct = () => {
                         <TextField
                             sx={{ width: '90%', m: 1 }}
                             id="outlined-size-small"
-                            name="phone"
+                            name="userPhone"
                             onBlur={handleOnBlur}
                             defaultValue="Phone Number"
                             size="small"
@@ -97,7 +94,6 @@ const PurchaseProduct = () => {
                             id="outlined-size-small"
                             name="address"
                             onBlur={handleOnBlur}
-                            // defaultValue="Address"
                             defaultValue="Address"
                             size="small"
                         />
@@ -126,7 +122,6 @@ const PurchaseProduct = () => {
                                 Price: ${product.price}
                             </Typography>
                         </CardContent>
-                        {/* <Button style={{ margin: '0 0 20px 0' }} variant="contained">Purchase now</Button> */}
                     </Box>
                 </Grid>
             </Grid>
