@@ -34,6 +34,13 @@ const Register = () => {
                 <TextField
                     sx={{ width: '50%', m: 1 }}
                     id="standard-basic"
+                    label="Your Name"
+                    name="name"
+                    onBlur={handleOnChange}
+                    variant="standard" />
+                <TextField
+                    sx={{ width: '50%', m: 1 }}
+                    id="standard-basic"
                     label="Your email"
                     name="email"
                     type="email"
