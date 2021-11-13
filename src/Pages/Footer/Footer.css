@@ -1,0 +1,11 @@
+.background{
+    background-color: darkslategray;
+}
+.decoration{
+    text-decoration: none;
+    color: darkgrey;
+}
+.header{
+    margin-bottom: 20px;
+    color: darkgrey;
+}

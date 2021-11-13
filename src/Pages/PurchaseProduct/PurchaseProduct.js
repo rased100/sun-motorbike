@@ -62,6 +62,11 @@ const PurchaseProduct = () => {
 
     return (
         <Box sx={{ flexGrow: 1 }}>
+
+            <Typography style={{ margin: '0 0 20px 0' }} variant="h3" component="div">
+                Product Details and Place Order
+            </Typography>
+
             <Grid container spacing={2}>
                 <Grid item xs={6}>
                     <form onSubmit={handleOrderSubmit}>
@@ -97,14 +102,11 @@ const PurchaseProduct = () => {
                             defaultValue="Address"
                             size="small"
                         />
-                        <Button type="submit" variant="contained">Place Order</Button>
+                        <Button style={{ width: '50%', margin: '20px 0 0 0' }} type="submit" variant="contained">Place Order</Button>
                     </form>
                 </Grid>
                 <Grid item xs={6}>
                     <Box>
-                        <Typography style={{ margin: '0 0 20px 0' }} variant="h2" component="div">
-                            Product Details
-                        </Typography>
                         <CardMedia
                             component="img"
                             style={{ width: '50%', margin: 'auto' }}

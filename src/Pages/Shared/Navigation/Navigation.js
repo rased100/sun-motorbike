@@ -25,7 +25,7 @@ const Navigation = () => {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>
-                        Sun Motorbike
+                        Super Bike Collection
                     </Typography>
                     {
                         user?.email ?
