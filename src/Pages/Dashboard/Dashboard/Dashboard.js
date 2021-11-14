@@ -17,12 +17,18 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
+import useAuth from '../../../hooks/useAuth';
+import Order from '../Order/Order';
 
 const drawerWidth = 240;
 
 function Dashboard(props) {
+    const { orders } = useAuth();
+    console.log('order in db', orders)
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
+
+
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -130,7 +136,11 @@ function Dashboard(props) {
             >
                 <Toolbar />
                 <Typography paragraph>
-                    content here
+                    <h4>All Orders</h4>
+                    {
+                        orders.map(order => <Order key={order._id} order={order}></Order>)
+                    }
+
                 </Typography>
 
             </Box>

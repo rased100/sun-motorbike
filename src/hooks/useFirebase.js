@@ -13,6 +13,8 @@ const useFirebase = () => {
     const auth = getAuth();
 
     const [products, setProducrs] = useState([]);
+    const [orders, setOrders] = useState([]);
+    console.log('order', orders)
 
     useEffect(() => {
         fetch('http://localhost:5000/products')
@@ -20,6 +22,12 @@ const useFirebase = () => {
             // fetch('bikes.json')
             .then(res => res.json())
             .then(data => setProducrs(data))
+    }, [])
+
+    useEffect(() => {
+        fetch('http://localhost:5000/orders')
+            .then(res => res.json())
+            .then(data => setOrders(data))
     }, [])
 
     const registerUser = (email, password, name, history) => {
@@ -93,6 +101,7 @@ const useFirebase = () => {
         isLoading,
         authError,
         products,
+        orders,
     }
 
 }
