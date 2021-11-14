@@ -36,6 +36,7 @@ const Register = () => {
                     id="standard-basic"
                     label="Your Name"
                     name="name"
+                    type="name"
                     onBlur={handleOnChange}
                     variant="standard" />
                 <TextField

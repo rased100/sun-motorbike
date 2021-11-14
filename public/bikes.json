@@ -1,0 +1,82 @@
+[
+    {
+        "name": "Yamaha R15M",
+        "engine": "155 cc (liq-cooled)",
+        "speed": "148 Kmph (approx)",
+        "mileage": "36 Kmpl (combined)",
+        "price": "490,000 (BDT)",
+        "img": "https://i.ibb.co/GcbGbr8/yamaha-r15m-image05.jpg"
+    },
+    {
+        "name": "Yamaha R15 V4",
+        "engine": "155 cc (liq-cooled)",
+        "speed": "148 Kmph (approx)",
+        "mileage": "36 Kmpl (combined)",
+        "price": "480,000 (BDT)",
+        "img": "https://i.ibb.co/GJHPhwy/yamaha-r15-v4-image05.jpg"
+    },
+    {
+        "name": "Yamaha R15 v3 Monster",
+        "engine": "155 cc (liq-cooled)",
+        "speed": "153 Kmph (approx)",
+        "mileage": "35 Kmpl (combined)",
+        "price": "470,000 (BDT)",
+        "img": "https://i.ibb.co/xjSKDrt/yamaha-r15-v3-recent-image1.jpg"
+    },
+    {
+        "name": " Yamaha R15 v3 Indonesian",
+        "engine": "155 cc (liq-cooled)",
+        "speed": "153 Kmph (approx)",
+        "mileage": "35 Kmpl (combined)",
+        "price": "500,000 (BDT)",
+        "img": "https://i.ibb.co/q0P5GgY/yamaha-r15-v3-recent-image2.jpg"
+    },
+    {
+        "name": "Yamaha XSR 155",
+        "engine": "155 cc (liq-cooled)",
+        "speed": "145 Kmph (approx)",
+        "mileage": "42 Kmpl (combined)",
+        "price": "535,000 Tk. (BDT)",
+        "img": "https://i.ibb.co/HPthChx/yamaha-xsr-155-real-image1.jpg"
+    },
+    {
+        "name": "Yamaha MT 15",
+        "engine": "155 cc (liq-cooled)",
+        "speed": "153 Kmph (approx)",
+        "mileage": "38 Kmpl (combined)",
+        "price": "395,000 Tk.(BDT)",
+        "img": "https://i.ibb.co/nm3hKT4/yamaha-mt15-real-image2.jpg"
+    },
+    {
+        "name": "Yamaha FZ-X",
+        "engine": "155 cc (liq-cooled)",
+        "speed": "120 Kmph (approx)",
+        "mileage": "38 Kmpl (combined)",
+        "price": "325,000 (BDT)",
+        "img": "https://i.ibb.co/kyBGBgf/yamaha-fz-x-image07.jpg"
+    },
+    {
+        "name": "Yamaha M-Slaz 150",
+        "engine": "149 cc (liq-cooled)",
+        "speed": "130 Kmph (approx)",
+        "mileage": "35 Kmpl (combined)",
+        "price": "425,000 (BDT)",
+        "img": "https://i.ibb.co/KbYPYj1/yamaha-m-slaz-150-real-image1.jpg"
+    },
+    {
+        "name": "Yamaha XTZ 150",
+        "engine": "149.3 cc (air-cooled)",
+        "speed": "100 Kmph (approx)",
+        "mileage": "38 Kmpl (combined)",
+        "price": "380,000 (BDT)",
+        "img": "https://i.ibb.co/2ZC9dcV/yamaha-xtz125-img06.jpg"
+    },
+    {
+        "name": "Yamaha Fazer FI v2.0",
+        "engine": "149 cc (air-cooled)",
+        "speed": "45 Kmph (approx)",
+        "mileage": "36 Kmpl (combined)",
+        "price": "258,000 (BDT)",
+        "img": "https://i.ibb.co/GF3xQDF/yamaha-fazer-fiv2-real-image2.jpg"
+    }
+]

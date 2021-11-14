@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Product = (props) => {
-    const { name, img, description, _id } = props.product;
+    const { name, img, engine, speed, mileage, price, _id } = props.product;
     const url = `/product/${_id}`;
 
     return (
@@ -18,8 +18,17 @@ const Product = (props) => {
                 <Typography variant="h5" component="div">
                     {name}
                 </Typography>
+                {/* <Typography variant="body2" color="text.secondary">
+                    {engine}
+                </Typography> */}
                 <Typography variant="body2" color="text.secondary">
-                    {description}
+                    {speed}
+                </Typography>
+                {/* <Typography variant="body2" color="text.secondary">
+                    {mileage}
+                </Typography> */}
+                <Typography variant="body2" color="text.secondary">
+                    {price}
                 </Typography>
             </CardContent>
             <Link to={url} style={{ textDecoration: 'none' }}><Button variant="contained">Details</Button></Link>

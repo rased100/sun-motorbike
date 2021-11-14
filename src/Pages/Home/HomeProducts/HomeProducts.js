@@ -6,6 +6,7 @@ import Product from '../../Product/Product';
 
 const HomeProducts = () => {
     const { products } = useAuth();
+    // console.log('kye', products[0]._id)
     return (
         <Container style={{
             margin: '50px auto'

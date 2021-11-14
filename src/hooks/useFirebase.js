@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import initializeFirebase from "../Pages/Login/Firebase/firebase.init";
-import { getAuth, createUserWithEmailAndPassword, signOut, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signOut, onAuthStateChanged, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 
 // initialize firebase app
 initializeFirebase();
@@ -15,17 +15,24 @@ const useFirebase = () => {
     const [products, setProducrs] = useState([]);
 
     useEffect(() => {
-        // fetch('http://localhost:5000/products')
-        fetch('products.json')
+        fetch('http://localhost:5000/products')
+            // fetch('products.json')
+            // fetch('bikes.json')
             .then(res => res.json())
             .then(data => setProducrs(data))
     }, [])
 
-    const registerUser = (email, password) => {
+    const registerUser = (email, password, name, history) => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 setAuthError('');
+                const newUser = { email, displayName: name };
+                setUser(newUser);
+                updateProfile(auth.currentUser, {
+                    displayName: name
+                });
+                // history.replace('/');
             })
             .catch((error) => {
                 setAuthError(error.message);

@@ -8,8 +8,8 @@ const PurchaseProduct = () => {
     const [product, setProduct] = useState({});
     const { Id } = useParams();
     const { user } = useAuth();
-    const { name, price, img, description } = product;
-    // console.log('usr', user)
+    const { name, price, img, engine, speed, mileage } = product;
+    console.log('usr', user)
     // console.log('product', product)
     // console.log('name', name)
     // console.log('price', price)
@@ -22,6 +22,7 @@ const PurchaseProduct = () => {
     }, []);
 
     const initialInfo = { userName: user.displayName, userEmail: user.email, userPhone: '' }
+    console.log('my name', initialInfo)
 
     const [purchaseInfo, setPurchaseInfo] = useState(initialInfo);
 
@@ -37,11 +38,14 @@ const PurchaseProduct = () => {
         // collect data
         const order = {
             ...purchaseInfo,
-            productName: name,
-            productPrice: price,
             productImage: img,
-            productDscription: description
+            productName: name,
+            productEngine: engine,
+            productSpeed: speed,
+            productMileage: mileage,
+            productPrice: price
         }
+
         // send to the server
         fetch('http://localhost:5000/orders', {
             method: 'POST',
@@ -77,6 +81,7 @@ const PurchaseProduct = () => {
                             onBlur={handleOnBlur}
                             defaultValue={user.displayName}
                             size="small"
+                            placeholder="Your Name"
                         />
                         <TextField
                             sx={{ width: '90%', m: 1 }}
@@ -118,9 +123,15 @@ const PurchaseProduct = () => {
                                 {product.name}
                             </Typography>
                             <Typography style={{ width: '50%', margin: 'auto' }} variant="body2" color="text.secondary">
-                                {product.description}
+                                {product.engine}
                             </Typography>
-                            <Typography variant="h6" component="div">
+                            <Typography style={{ width: '50%', margin: 'auto' }} variant="body2" color="text.secondary">
+                                {product.speed}
+                            </Typography>
+                            <Typography style={{ width: '50%', margin: 'auto' }} variant="body2" color="text.secondary">
+                                {product.mileage}
+                            </Typography>
+                            <Typography variant="p" component="div">
                                 Price: ${product.price}
                             </Typography>
                         </CardContent>
