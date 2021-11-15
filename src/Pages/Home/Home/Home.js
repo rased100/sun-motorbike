@@ -1,5 +1,6 @@
 import React from 'react';
 import Footer from '../../Footer/Footer';
+import ReviewUi from '../../Review/ReviewUi/ReviewUi';
 import Navigation from '../../Shared/Navigation/Navigation';
 import Banner from '../Banner/Banner';
 import HomeProducts from '../HomeProducts/HomeProducts';
@@ -12,6 +13,7 @@ const Home = () => {
             <Banner></Banner>
             <HomeProducts></HomeProducts>
             <OurShowroom></OurShowroom>
+            <ReviewUi></ReviewUi>
             <Footer></Footer>
         </div>
     );

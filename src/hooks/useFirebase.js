@@ -15,6 +15,14 @@ const useFirebase = () => {
     const [products, setProducrs] = useState([]);
     const [orders, setOrders] = useState([]);
     // console.log('order', orders)
+    const [comments, setComments] = useState([]);
+    console.log('comments', comments)
+
+    useEffect(() => {
+        fetch('https://infinite-mesa-54946.herokuapp.com/comments')
+            .then(res => res.json())
+            .then(data => setComments(data))
+    }, [])
 
     useEffect(() => {
         fetch('https://infinite-mesa-54946.herokuapp.com/products')
@@ -102,6 +110,7 @@ const useFirebase = () => {
         authError,
         products,
         orders,
+        comments,
     }
 
 }

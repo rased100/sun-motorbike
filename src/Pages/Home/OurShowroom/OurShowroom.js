@@ -24,6 +24,7 @@ const OurShowroom = () => {
                 <FormControl fullWidth>
                     <InputLabel id="demo-simple-select-label">Area</InputLabel>
                     <Select
+                        className="bg-white"
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
                         value={age}
