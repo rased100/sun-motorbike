@@ -9,19 +9,16 @@ const PurchaseProduct = () => {
     const { Id } = useParams();
     const { user } = useAuth();
     const { name, price, img, engine, speed, mileage } = product;
-    console.log('usr', user)
-    // console.log('product', product)
-    // console.log('name', name)
-    // console.log('price', price)
+    console.log('product', product)
 
     useEffect(() => {
-        const url = `http://localhost:5000/product/${Id}`;
+        const url = `https://infinite-mesa-54946.herokuapp.com/product/${Id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data));
     }, []);
 
-    const initialInfo = { userName: user.displayName, userEmail: user.email, userPhone: '' }
+    const initialInfo = { userName: user.displayName, email: user.email, userPhone: '' }
     console.log('my name', initialInfo)
 
     const [purchaseInfo, setPurchaseInfo] = useState(initialInfo);
@@ -47,7 +44,7 @@ const PurchaseProduct = () => {
         }
 
         // send to the server
-        fetch('http://localhost:5000/orders', {
+        fetch('https://infinite-mesa-54946.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -75,6 +72,7 @@ const PurchaseProduct = () => {
                 <Grid item xs={6}>
                     <form onSubmit={handleOrderSubmit}>
                         <TextField
+                            required
                             sx={{ width: '90%', m: 1 }}
                             id="outlined-size-small"
                             name="userName"

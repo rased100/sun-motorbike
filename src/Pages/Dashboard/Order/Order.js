@@ -4,7 +4,7 @@ import './Order.css';
 
 const Order = (props) => {
     const { productName, productPrice, userName, productImage, productSpeed, productEngine } = props.order;
-    console.log('img', productImage)
+    // console.log('img', productImage)
     return (
 
         <div className="order">
