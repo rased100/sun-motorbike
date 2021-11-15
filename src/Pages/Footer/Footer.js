@@ -1,7 +1,8 @@
-import { Grid, Link } from '@mui/material';
+import { Grid } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
@@ -35,12 +36,12 @@ const Footer = () => {
                     <Grid item xs={12} sm={4}>
                         <Box className="header" borderBottom={1}>Account</Box>
                         <Box>
-                            <Link className="decoration" href="/" color="inherit">
+                            <Link className="decoration" to="/login" color="inherit">
                                 Login
                             </Link>
                         </Box>
                         <Box>
-                            <Link className="decoration" href="/" color="inherit">
+                            <Link className="decoration" to="/register" color="inherit">
                                 Register
                             </Link>
                         </Box>

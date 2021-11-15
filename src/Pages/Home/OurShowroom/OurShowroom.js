@@ -15,14 +15,14 @@ const OurShowroom = () => {
         setAge(event.target.value);
     };
     return (
-        <div className="d-flex justify-content-center bg-secondary p-5 my-5 fulContainer">
+        <div className="d-flex justify-content-center bgcolor p-5 my-5 fulContainer">
             <Box sx={{ minWidth: 120 }} className="boxContainer">
                 <Typography variant="h4" gutterBottom component="div">
                     Find Showroom
                 </Typography>
 
                 <FormControl fullWidth>
-                    <InputLabel id="demo-simple-select-label">Age</InputLabel>
+                    <InputLabel id="demo-simple-select-label">Area</InputLabel>
                     <Select
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
@@ -30,7 +30,7 @@ const OurShowroom = () => {
                         label="Age"
                         onChange={handleChange}
                     >
-                        <MenuItem value={'Select Your Area'}>Select Your Area</MenuItem>
+                        {/* <MenuItem value={'Select Your Area'}>Select Your Area</MenuItem> */}
                         <MenuItem value={'Barishal'}>Barishal</MenuItem>
                         <MenuItem value={'Chattogram'}>Chattogram</MenuItem>
                         <MenuItem value={'Dhaka'}>Dhaka</MenuItem>

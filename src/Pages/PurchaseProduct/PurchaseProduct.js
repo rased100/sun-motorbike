@@ -42,6 +42,7 @@ const PurchaseProduct = () => {
             productMileage: mileage,
             productPrice: price
         }
+        console.log('ordersss', order)
 
         // send to the server
         fetch('https://infinite-mesa-54946.herokuapp.com/orders', {
@@ -64,8 +65,8 @@ const PurchaseProduct = () => {
     return (
         <Box sx={{ flexGrow: 1 }}>
 
-            <Typography style={{ margin: '0 0 20px 0' }} variant="h3" component="div">
-                Product Details and Place Order
+            <Typography className="bg-primary text-white p-3" style={{ margin: '0 0 20px 0' }} variant="h3" component="div">
+                Place Order and Product Details
             </Typography>
 
             <Grid container spacing={2}>
