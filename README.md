@@ -3,9 +3,9 @@
 
 Live site: https://sun-motorbike.web.app
 
-Client site code link: https://github.com/programming-hero-web-course-4/niche-website-client-side-rased100
+Client site code link: https://github.com/rased100/online-bike-shop-client-side
 
-Server site code link: https://github.com/programming-hero-web-course-4/niche-website-server-side-rased100
+Server site code link: https://github.com/rased100/online-bike-shop-server-side
 
 
 
