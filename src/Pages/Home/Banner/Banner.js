@@ -11,6 +11,42 @@ const Banner = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
+                        src="https://i.ibb.co/ccPYf6J/sun-banner2.jpg"
+                        alt="First slide"
+                    />
+                    <Carousel.Caption className="text">
+                        <h1>4 Milllions Units</h1>
+                        <p>4 Million Units Assembled Newnan, Ga</p>
+                        <Link to="/products" style={{ textDecoration: 'none' }}><Button variant="contained">Explore</Button></Link>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                        className="d-block w-100"
+                        src="https://i.ibb.co/0FgcvS0/sun-banner1.jpg"
+                        alt="First slide"
+                    />
+                    <Carousel.Caption className="text">
+                        <h1>MT-IDSP</h1>
+                        <p>Mororcross, Cross Country</p>
+                        <Link to="/products" style={{ textDecoration: 'none' }}><Button variant="contained">Explore</Button></Link>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                        className="d-block w-100"
+                        src="https://i.ibb.co/0fJnx8G/sun-banner3.jpg"
+                        alt="First slide"
+                    />
+                    <Carousel.Caption className="text">
+                        <h1>Yamaha Outdoor</h1>
+                        <p>Access Initiative Steadfast In Public Lend Conservation</p>
+                        <Link to="/products" style={{ textDecoration: 'none' }}><Button variant="contained">Explore</Button></Link>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                        className="d-block w-100"
                         src="https://i.ibb.co/w05z26h/1.jpg"
                         alt="First slide"
                     />
