@@ -9,7 +9,7 @@ const MyOrders = () => {
     console.log('my orders', myOrders)
 
     useEffect(() => {
-        const url = `https://infinite-mesa-54946.herokuapp.com/myorders?email=${user.email}`
+        const url = `http://localhost:5000/myorders?email=${user.email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setmyOrders(data));

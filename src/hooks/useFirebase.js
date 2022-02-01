@@ -12,33 +12,33 @@ const useFirebase = () => {
 
     const auth = getAuth();
 
-    const [products, setProducrs] = useState([]);
+    const [products, setProducts] = useState([]);
     const [orders, setOrders] = useState([]);
     // console.log('order', orders)
     const [comments, setComments] = useState([]);
     console.log('comments', comments)
 
     useEffect(() => {
-        fetch('https://infinite-mesa-54946.herokuapp.com/comments')
+        fetch('http://localhost:5000/comments')
             .then(res => res.json())
             .then(data => setComments(data))
     }, [])
 
     useEffect(() => {
-        fetch('https://infinite-mesa-54946.herokuapp.com/products')
+        fetch('http://localhost:5000/products')
             // fetch('products.json')
             // fetch('bikes.json')
             .then(res => res.json())
-            .then(data => setProducrs(data))
+            .then(data => setProducts(data))
     }, [])
 
     useEffect(() => {
-        fetch('https://infinite-mesa-54946.herokuapp.com/orders')
+        fetch('http://localhost:5000/orders')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])
 
-    const registerUser = (email, password, name, history) => {
+    const registerUser = (email, password, name, navigate) => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
@@ -48,7 +48,7 @@ const useFirebase = () => {
                 updateProfile(auth.currentUser, {
                     displayName: name
                 });
-                // history.replace('/');
+                navigate('/');
             })
             .catch((error) => {
                 setAuthError(error.message);
@@ -58,12 +58,12 @@ const useFirebase = () => {
             });
     }
 
-    const loginUser = (email, password, location, history) => {
+    const loginUser = (email, password, location, navigate) => {
         setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const destination = location?.state?.from || '/';
-                history.replace(destination);
+                navigate(destination);
                 setAuthError('');
             })
             .catch((error) => {
