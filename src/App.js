@@ -1,7 +1,7 @@
 import './App.css';
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route
 } from "react-router-dom";
 import Home from './Pages/Home/Home/Home';
@@ -27,41 +27,30 @@ function App() {
       <AuthProvider>
         <Router>
           {/* <Navigation></Navigation> */}
-          <Switch>
-            <Route path="/home">
-              <Home />
+          <Routes>
+            <Route path="/home" element={<Home />}>
             </Route>
-            <PrivateRoute path="/about">
-              <About />
-            </PrivateRoute>
-            <PrivateRoute path="/product/:Id">
-              <PurchaseProduct></PurchaseProduct>
-            </PrivateRoute>
-            <Route path="/login">
-              <Login />
+            <Route path="/about" element={<PrivateRoute><About /></PrivateRoute>}>
             </Route>
-            <Route path="/myorders">
-              <MyOrders />
+            <Route path="/product/:Id" element={<PrivateRoute><PurchaseProduct></PurchaseProduct></PrivateRoute>}>
             </Route>
-            <Route path="/payment">
-              <Payment />
+            <Route path="/login" element={<Login />}>
             </Route>
-            <Route path="/review">
-              <Review />
+            <Route path="/myorders" element={<MyOrders />}>
             </Route>
-            <Route path="/register">
-              <Register />
+            <Route path="/payment" element={<Payment />}>
             </Route>
-            <Route path="/products">
-              <Products></Products>
+            <Route path="/review" element={<Review />}>
             </Route>
-            <Route path="/dashboard">
-              <Dashboard></Dashboard>
+            <Route path="/register" element={<Register />}>
             </Route>
-            <Route exact path="/">
-              <Home />
+            <Route path="/products" element={<Products />}>
             </Route>
-          </Switch>
+            <Route path="/dashboard" element={<Dashboard />}>
+            </Route>
+            <Route path="/" element={<Home />}>
+            </Route>
+          </Routes>
           {/* <Footer></Footer> */}
         </Router>
       </AuthProvider>
