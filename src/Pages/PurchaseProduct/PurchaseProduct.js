@@ -12,7 +12,7 @@ const PurchaseProduct = () => {
     console.log('product', product)
 
     useEffect(() => {
-        const url = `https://infinite-mesa-54946.herokuapp.com/product/${Id}`;
+        const url = `http://localhost:5000/product/${Id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data));
@@ -45,7 +45,7 @@ const PurchaseProduct = () => {
         console.log('ordersss', order)
 
         // send to the server
-        fetch('https://infinite-mesa-54946.herokuapp.com/orders', {
+        fetch('http://localhost:5000/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -20,13 +20,13 @@ const useFirebase = () => {
     console.log('comments', comments)
 
     useEffect(() => {
-        fetch('https://infinite-mesa-54946.herokuapp.com/comments')
+        fetch('http://localhost:5000/comments')
             .then(res => res.json())
             .then(data => setComments(data))
     }, [])
 
     useEffect(() => {
-        fetch('https://infinite-mesa-54946.herokuapp.com/products')
+        fetch('http://localhost:5000/products')
             // fetch('products.json')
             // fetch('bikes.json')
             .then(res => res.json())
@@ -34,7 +34,7 @@ const useFirebase = () => {
     }, [])
 
     useEffect(() => {
-        fetch('https://infinite-mesa-54946.herokuapp.com/orders')
+        fetch('http://localhost:5000/orders')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])
@@ -49,7 +49,11 @@ const useFirebase = () => {
                 updateProfile(auth.currentUser, {
                     displayName: name
                 });
+<<<<<<< HEAD
                 // navigate('/');
+=======
+                navigate('/');
+>>>>>>> 07ad035572c614b4e2019b0fbfa3f92842842fac
             })
             .catch((error) => {
                 setAuthError(error.message);
