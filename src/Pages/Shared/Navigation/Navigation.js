@@ -25,11 +25,7 @@ const Navigation = () => {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>
-<<<<<<< HEAD
                         Super Bike Collection v6
-=======
-                        Super bike Collection
->>>>>>> 07ad035572c614b4e2019b0fbfa3f92842842fac
                     </Typography>
                     {
                         user?.email ?

@@ -44,20 +44,11 @@ function App() {
             </Route>
             <Route path="/register" element={<Register />}>
             </Route>
-<<<<<<< HEAD
             <Route path="/products" element={<Products />}>
             </Route>
             <Route path="/dashboard" element={<Dashboard />}>
             </Route>
             <Route path="/" element={<Home />}>
-=======
-            <Route path="/products" element={<Products></Products>}>
-            </Route>
-            <Route path="/dashboard" element={<Dashboard></Dashboard>}>
-            </Route>
-            <Route exact path="/" element={<Home />}>
-
->>>>>>> 07ad035572c614b4e2019b0fbfa3f92842842fac
             </Route>
           </Routes>
           {/* <Footer></Footer> */}

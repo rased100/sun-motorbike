@@ -26,8 +26,8 @@ const Review = () => {
         console.log('usercomment', userComments)
 
         // send to the server
-        fetch('http://localhost:5000/comments', {
-            // fetch('http://localhost:5000/comments', {
+        fetch('https://infinite-mesa-54946.herokuapp.com/comments', {
+            // fetch('https://infinite-mesa-54946.herokuapp.com/comments', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
